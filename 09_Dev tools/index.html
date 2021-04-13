@@ -19,28 +19,69 @@
 
     // Regular
 
+    console.log('Hello');
+
     // Interpolated
+
+    // console.log(`Hello I'm a ${variableName}`)
 
     // Styled
 
+    console.log('%c Hello I am red', 'font-size: 20px; background: purple');
+
     // warning!
+
+    console.warn("oh no!!");
 
     // Error :|
 
+    console.error('you need to change your credentials!');
+
     // Info
+
+    console.info('you eat too much');
 
     // Testing
 
+    const p = document.querySelector('p');
+
+    console.assert(p.classList.contains('ouch'), 'that is wrong!!');
+
     // clearing
+
+    console.clear();
 
     // Viewing DOM Elements
 
+    // console.log(p)
+    console.dir(p)
+
+    console.clear();
+
     // Grouping together
+
+    dogs.forEach(dog => {
+      // console.group(`${dog.name}`);
+      console.groupCollapsed(`${dog.name}`);
+      console.log(`this is ${dog.name}`);
+      console.log(`${dog.name} is ${dog.age}`);
+      console.groupEnd(`${dog.name}`);
+    })
 
     // counting
 
+    console.count('is');
+
     // timing
 
+    console.time('fetching data');
+
+    fetch('https://api.github.com/users/LaureneEpp')
+      .then(data => data.json())
+      .then(data => {
+        console.timeEnd('fetching data');
+        console.log(data);
+      });
   </script>
 </body>
 </html>
